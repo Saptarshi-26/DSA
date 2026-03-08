@@ -16,6 +16,6 @@ public class Multi_Wrapped_lambda_exercise {
     }
 
     public static void main(String[] args) {
-        wrapped_1(() -> System.out.print(1), 1).run();
+        wrapped_1(() -> System.out.print(1), 2).run();
     }
 }
