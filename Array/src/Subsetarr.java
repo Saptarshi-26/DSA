@@ -20,12 +20,13 @@ public class Subsetarr {
         });
     }
     public static ArrayList<ArrayList<Integer>> subs(ArrayList<Integer>arr , ArrayList<Integer>a){
+        ArrayList<ArrayList<Integer>>ar= new ArrayList<>();
         if(a.size()==0){
-            ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
+           // ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
             ar.add(new ArrayList<>(arr));
             return ar;
         }
-        ArrayList<ArrayList<Integer>>ar= new ArrayList<>();
+     //   ArrayList<ArrayList<Integer>>ar= new ArrayList<>();
         int temp=a.get(0);
         a.remove(0);
         arr.add(temp);

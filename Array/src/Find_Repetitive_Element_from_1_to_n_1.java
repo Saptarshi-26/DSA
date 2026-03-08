@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Find_Repeatitive_Element_from_1_to_n_1 {
+public class Find_Repetitive_Element_from_1_to_n_1 {
     public static int findDuplicate(int[] arr) {
         // code here
         for (int i = 0; i < arr.length; ) {

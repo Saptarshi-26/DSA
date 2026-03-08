@@ -3,7 +3,7 @@ package functional_programimg;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Calculator_Engine_lamda_Excercise {
+public class Calculator_Engine_lambda_Exercise {
     static void cal_eng(HashMap<String, op> h, String s, int a, int b) {
         if (h.containsKey(s)) System.out.println(h.get(s).operate(a, b));
 

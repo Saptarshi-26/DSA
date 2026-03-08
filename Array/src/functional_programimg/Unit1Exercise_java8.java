@@ -2,8 +2,10 @@ package functional_programimg;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
-public class Unit1Exercisejava8 {
+public class Unit1Exercise_java8 {
     public static void main(String[] args) {
         List<Person> people = Arrays.asList(
                 new Person("Naruto", "Uzumaki", 17),
@@ -19,7 +21,7 @@ public class Unit1Exercisejava8 {
 
         //create a method that prints all elements in the list
 
-        printConditionally(people,p->true);
+        printConditionally(people, p -> true);
 
 
         // create  method that prints all names that ends with u
@@ -33,9 +35,9 @@ public class Unit1Exercisejava8 {
 
     }
 
-    private static void printConditionally(List<Person> people, Condition condition) {
+    private static void printConditionally(List<Person> people, Predicate<Person> p1 ) {
         for (Person p : people) {
-            if (condition.test(p))
+            if (p1.test(p))
                 System.out.println(p);
         }
     }

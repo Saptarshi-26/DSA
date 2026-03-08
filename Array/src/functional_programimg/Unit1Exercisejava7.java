@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Unit1Exercise {
+public class Unit1Exercisejava7 {
     public static void main(String[] args) {
         List<Person> people = Arrays.asList(
                 new Person("Naruto", "Uzumaki", 17),
