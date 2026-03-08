@@ -1,7 +1,10 @@
 package streams_in_java;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicIntegerArray;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class IntermediateOperations {
@@ -32,6 +35,6 @@ public class IntermediateOperations {
 
         System.out.println(Stream.iterate(1, x -> x + 1).skip(15).limit(100).toList());
 
-
+        
     }
 }
