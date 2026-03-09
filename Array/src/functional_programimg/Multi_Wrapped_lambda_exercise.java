@@ -1,21 +1,19 @@
 package functional_programimg;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Multi_Wrapped_lambda_exercise {
-    static Runnable wrapped_1(Runnable r, int n) {
-        AtomicInteger a = new AtomicInteger(n);
+    static Runnable wrapped(Runnable r, int n) {
         if (n == 10) return () -> {
-            System.out.print(a.get() + " ");
+            System.out.print(n + " ");
             r.run();
         };
-        return wrapped_1(() -> {
-            System.out.print(a.get() + " ");
+        return wrapped(() -> {
+            System.out.print(n + " ");
             r.run();
         }, n + 1);
     }
 
     public static void main(String[] args) {
-        wrapped_1(() -> System.out.print(1), 2).run();
+
+        wrapped(() -> System.out.print("END "+1), 2).run();
     }
 }
