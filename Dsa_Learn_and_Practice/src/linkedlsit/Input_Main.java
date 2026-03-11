@@ -62,8 +62,8 @@ public class Input_Main {
        // Odd_Even_Linked_list oddEvenLinkedList = new Odd_Even_Linked_list();
         //display(oddEvenLinkedList.oddEvenList(lists[0]));
 
-        Sort_Linked_List sortLinkedList = new Sort_Linked_List();
-        sortLinkedList.sortList(lists[0]);
-        display(lists[0]);
+//        Sort_Linked_List sortLinkedList = new Sort_Linked_List();
+//        sortLinkedList.sortList(lists[0]);
+//        display(lists[0]);
     }
 }
