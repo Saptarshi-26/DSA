@@ -28,7 +28,7 @@ public class Minimum_Window_Substring {
                     char_freq.put(ci, char_freq.get(ci) + 1);
                     if (char_freq.get(ci) > 0) count--;
                 }
-                i++;
+                if(count==char_freq.size())i++;
             } else {
                 if (char_freq.containsKey(cj)) {
                     char_freq.put(cj, char_freq.get(cj) - 1);
