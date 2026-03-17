@@ -2,18 +2,21 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public  class Minimum_Window_Substring_1 {
+public class Minimum_Window_Substring {
 
     public static String minWindow(String s, String t) {
 
-        HashMap<Character, Long> char_freq = (HashMap<Character, Long>) s.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        HashMap<Character, Long> char_freq = (HashMap<Character, Long>) t.chars().
+                mapToObj(x -> (char) x).
+                collect(Collectors.groupingBy(x -> x, Collectors.counting()));
 
         int count = 0;
 
-        int i = 0;
-        int j = i;
+        int i = -1;
+        while (!char_freq.containsKey(s.charAt(++i)));
+        int j = i+1;
         String ans = s;
-        while (i < s.length()) {
+        while (j < s.length()) {
             char ci = s.charAt(i);
             char cj = s.charAt(j);
             if (!char_freq.containsKey(ci)) {
@@ -46,10 +49,12 @@ public  class Minimum_Window_Substring_1 {
     }
 
 
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("enter the string ");
-    String s = sc.next();
-    System.out.println();
-}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the string ");
+        String s = sc.next();
+        System.out.println("enter the target string ");
+        String t = sc.next();
+        System.out.println(minWindow(s, t));
+    }
 }
