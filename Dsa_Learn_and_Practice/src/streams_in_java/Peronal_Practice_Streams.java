@@ -1,8 +1,6 @@
 package streams_in_java;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Peronal_Practice_Streams {
@@ -52,6 +50,17 @@ public class Peronal_Practice_Streams {
         s1.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         // practice 8
         s1.chars().mapToObj(x -> (char) x).filter(x -> s1.indexOf(x) == s1.lastIndexOf(x)).findFirst();
+
+        //practice
+
+        List<Integer> list2 = Arrays.asList(10, 15, 20, 25, 30);
+        list2.stream().filter(x->x>20).toList().forEach(System.out::println);
+        list2.stream().filter(x->x%5==0).map(x->Math.pow(x,2)).toList();
+        list2.stream().filter(x->x>5).findFirst().get();
+        List<String> names_1 = Arrays.asList("Ram", "Ravi", "Amit", "Ankit");
+        names_1.stream().collect(Collectors.groupingBy(x->x.charAt(0)));
+        List<String> list3 = Arrays.asList("a","b","a","c","b","a");
+        list3.stream().collect(Collectors.groupingBy(x->x, TreeMap::new,Collectors.counting()));
 
 
 
