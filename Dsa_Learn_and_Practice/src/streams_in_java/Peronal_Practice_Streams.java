@@ -1,6 +1,7 @@
 package streams_in_java;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Peronal_Practice_Streams {
@@ -54,14 +55,23 @@ public class Peronal_Practice_Streams {
         //practice
 
         List<Integer> list2 = Arrays.asList(10, 15, 20, 25, 30);
-        list2.stream().filter(x->x>20).toList().forEach(System.out::println);
-        list2.stream().filter(x->x%5==0).map(x->Math.pow(x,2)).toList();
-        list2.stream().filter(x->x>5).findFirst().get();
+        list2.stream().filter(x -> x > 20).toList().forEach(System.out::println);
+        list2.stream().filter(x -> x % 5 == 0).map(x -> Math.pow(x, 2)).toList();
+        list2.stream().filter(x -> x > 5).findFirst().get();
         List<String> names_1 = Arrays.asList("Ram", "Ravi", "Amit", "Ankit");
-        names_1.stream().collect(Collectors.groupingBy(x->x.charAt(0)));
-        List<String> list3 = Arrays.asList("a","b","a","c","b","a");
-        list3.stream().collect(Collectors.groupingBy(x->x, TreeMap::new,Collectors.counting()));
+        names_1.stream().collect(Collectors.groupingBy(x -> x.charAt(0)));
+        List<String> list3 = Arrays.asList("a", "b", "a", "c", "b", "a");
+        list3.stream().collect(Collectors.groupingBy(x -> x, TreeMap::new, Collectors.counting()));
 
+        String s2 = "swiss";
+        HashMap<Character, Long> h1 = s2.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, LinkedHashMap::new, Collectors.counting()));
+        System.out.println(h1.keySet().stream().filter(x -> h1.get(x) == 1).findFirst().get());
+
+        List<Integer> list4 = Arrays.asList(1, 1, 1, 2, 2, 3);
+        int k = 2;
+        HashMap<Integer, Long> h2 = list4.stream().collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+
+        h2.keySet().stream().sorted((a, b) -> (int) (h2.get(b) - h2.get(a))).limit(k).toList().forEach(System.out::println);
 
 
     }
