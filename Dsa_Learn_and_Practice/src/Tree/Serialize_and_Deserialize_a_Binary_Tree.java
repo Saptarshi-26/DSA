@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Serialize_and_deserialize_a_binary_tree {
+public class Serialize_and_Deserialize_a_Binary_Tree {
     // Encodes a tree to a single string.
     public String serialize(Node root) {
         if(root==null)return "null";
