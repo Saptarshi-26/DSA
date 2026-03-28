@@ -3,6 +3,7 @@ package streams_in_java;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Peronal_Practice_Streams {
     public static void main(String[] args) {
@@ -72,6 +73,12 @@ public class Peronal_Practice_Streams {
         HashMap<Integer, Long> h2 = list4.stream().collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
 
         h2.keySet().stream().sorted((a, b) -> (int) (h2.get(b) - h2.get(a))).limit(k).toList().forEach(System.out::println);
+
+
+        // Reverse string
+        String original = "abcd";
+        String reverse = IntStream.range(0,original.length()).mapToObj(x->String.valueOf(original.charAt(original.length()-1-x))).collect(Collectors.joining());
+        System.out.println(reverse);
 
 
     }
