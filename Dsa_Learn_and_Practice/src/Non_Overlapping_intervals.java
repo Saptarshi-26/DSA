@@ -4,12 +4,8 @@ import java.util.stream.Collectors;
 
 public class Non_Overlapping_intervals {
     public static int eraseOverlapIntervals(int[][] arr) {
-        TreeMap<Integer, List<int[]>> interval_sorted = Arrays.stream(arr).collect(Collectors.groupingBy(x->x[0],TreeMap::new,Collectors.toList()));
-        interval_sorted.replaceAll((x, v) -> v.stream().sorted(Comparator.comparingInt(a -> a[1])).toList());
-        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-        for (int x : interval_sorted.keySet()){
-
-        }
+       TreeMap<Integer,int[]> map = Arrays.stream(arr).collect(Collectors.groupingBy(x->x[0], TreeMap::new,
+               Collectors.collectingAndThen(Collectors.minBy((a,b)->a[1]-b[1]),a->a.get())));
 
 
 
