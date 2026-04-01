@@ -7,8 +7,8 @@ public class Test {
         world.start();
 
         World_implementing_Runnable_interface world1 = new World_implementing_Runnable_interface();
-        Thread t1 = new Thread(world1);
-        t1.start();
+        Thread t1 = new Thread(world1); // new state , thread is just created
+        t1.start();                     // runnable state , it started
 
         Thread.currentThread().setName("main thread ");
         for (;;){

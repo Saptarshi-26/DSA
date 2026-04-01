@@ -1,11 +1,24 @@
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Non_Overlapping_intervals {
     public static int eraseOverlapIntervals(int[][] arr) {
-       TreeMap<Integer,int[]> map = Arrays.stream(arr).collect(Collectors.groupingBy(x->x[0], TreeMap::new,
-               Collectors.collectingAndThen(Collectors.minBy((a,b)->a[1]-b[1]),a->a.get())));
+
+       TreeMap<Integer,int[]> sort_map = Arrays.stream(arr).collect(Collectors.toMap(x -> x[0],
+               Function.identity(), BinaryOperator.minBy((a, b) -> a[1] - b[1]), TreeMap::new));
+
+       List<int[]> intervals = sort_map.keySet().stream().map(sort_map::get).toList();
+
+       HashMap<int[] ,Integer > min_chain = new HashMap<>(Map.of(intervals.getFirst(),1));
+
+       intervals.forEach(x->System.out.println(Arrays.toString(x)));
+
+
+       
+
 
 
 
