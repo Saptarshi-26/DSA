@@ -1,0 +1,13 @@
+package MultiThreading;
+
+public class Counter {
+    private int count =0;
+    public synchronized void increment(){
+       // synchronized (this) {
+            count++;  // critical section
+       // }
+    }
+    public int getter(){
+        return count;
+    }
+}
