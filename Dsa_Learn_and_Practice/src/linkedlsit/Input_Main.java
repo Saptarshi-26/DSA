@@ -65,5 +65,7 @@ public class Input_Main {
 //        Sort_Linked_List sortLinkedList = new Sort_Linked_List();
 //        sortLinkedList.sortList(lists[0]);
 //        display(lists[0]);
+        Remove_Zero_sum_Consecutive_Node_from_Linked_List r = new Remove_Zero_sum_Consecutive_Node_from_Linked_List();
+        display(r.removeZeroSumSublists(lists[0]));
     }
 }
