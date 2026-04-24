@@ -3,23 +3,27 @@ package linkedlsit;
 import java.util.HashMap;
 
 public class Remove_Zero_sum_Consecutive_Node_from_Linked_List {
-    Node[] remove_zero_sum(Node n, HashMap<Integer, Node> map, int sum) {
+    Node remove_zero_sum(Node n, HashMap<Integer, Integer> map, int sum) {
         if (n == null) {
-            return new Node[2];
+            return null;
         }
         sum += n.data;
-        if (map.containsKey(sum)) {
-            return new Node[]{new Node(sum), n.next};
+        map.put(sum, map.containsKey(sum) ? map.get(sum) + 1 : 1);
+        if (sum == 0 || map.get(sum) > 1) {
+            return n;
         }
 
-        map.put(sum, n);
-        Node[] temp = remove_zero_sum(n.next, map, sum);
-        while (temp[0] != null) {
-            map.remove(sum);
-            if (temp[0].data == sum) {
-                n.next = temp[1].next;
+        Node temp = remove_zero_sum(n.next, map, sum);
+        while (temp != null) {
+            if (map.get(sum) > 1) {
+                map.put(sum, 1);
+                n.next = temp.next;
                 temp = remove_zero_sum(n.next, map, sum);
-            } else return temp;
+                continue;
+            }
+            map.remove(sum);
+            return temp;
+
         }
         return temp;
 
@@ -27,10 +31,10 @@ public class Remove_Zero_sum_Consecutive_Node_from_Linked_List {
 
     public Node removeZeroSumSublists(Node head) {
         Node ans = head;
-        HashMap<Integer, Node> map = new HashMap<>();
-        Node[] temp = remove_zero_sum(ans, map, 0);
-        while (temp[0] != null) {
-            ans = temp[1].next;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Node temp = remove_zero_sum(ans, map, 0);
+        while (temp != null) {
+            ans = temp.next;
             temp = remove_zero_sum(ans, map, 0);
         }
         return ans;
