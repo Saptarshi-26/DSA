@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Peronal_Practice_Streams {
     public static void main(String[] args) {
@@ -77,8 +78,9 @@ public class Peronal_Practice_Streams {
 
         // Reverse string
         String original = "abcd";
+        String rev=Stream.iterate(0,x->x+1).limit(original.length()).map(a->String.valueOf(original.charAt(original.length()-1-a))).collect(Collectors.joining());
         String reverse = IntStream.range(0,original.length()).mapToObj(x->String.valueOf(original.charAt(original.length()-1-x))).collect(Collectors.joining());
-        System.out.println(reverse);
+        System.out.println(rev+" "+reverse);
 
 
     }
