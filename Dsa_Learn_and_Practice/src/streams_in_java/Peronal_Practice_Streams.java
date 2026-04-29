@@ -7,6 +7,34 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Peronal_Practice_Streams {
+    static class Employee {
+        String name;
+        String department;
+        int salary;
+
+        Employee(String name, String department, int salary) {
+            this.name = name;
+            this.department = department;
+            this.salary = salary;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDepartment() {
+            return department;
+        }
+
+        public int getSalary() {
+            return salary;
+        }
+
+        @Override
+        public String toString() {
+            return name + " " + department + " " + salary;
+        }
+    }
     public static void main(String[] args) {
         List<String> names = List.of("Ram", "Shyam", "Sita", "Gita");
         //ex-1
@@ -81,6 +109,28 @@ public class Peronal_Practice_Streams {
         String rev=Stream.iterate(0,x->x+1).limit(original.length()).map(a->String.valueOf(original.charAt(original.length()-1-a))).collect(Collectors.joining());
         String reverse = IntStream.range(0,original.length()).mapToObj(x->String.valueOf(original.charAt(original.length()-1-x))).collect(Collectors.joining());
         System.out.println(rev+" "+reverse);
+
+        List<String> words = List.of(
+                "apple", "banana", "apple", "orange",
+                "banana", "apple", "kiwi"
+        );
+        HashMap<String,Long> map_freq=words.stream().collect(Collectors.groupingBy(x->x,HashMap::new,Collectors.counting()));
+        List<String> freq_str=map_freq.keySet().stream().sorted((a,b)->(int)(map_freq.get(a)==map_freq.get(b)?a.compareTo(b):(map_freq.get(b)-map_freq.get(a)))).toList();
+        freq_str.stream().forEach(System.out::println);
+        List<Employee> employees = List.of(
+                new Employee("Alice", "HR", 50),
+                new Employee("Bob", "HR", 70),
+                new Employee("Tom", "IT", 90),
+                new Employee("Jerry", "IT", 120),
+                new Employee("Adam", "IT", 120),
+                new Employee("Max", "Sales", 60),
+                new Employee("Nina", "Sales", 55)
+        );
+        Map<String, String> result = employees.stream().collect
+                (Collectors.groupingBy(x->x.department,Collectors.collectingAndThen
+                        (Collectors.maxBy(Comparator.comparingInt(Employee::getSalary).
+                                thenComparing(Employee::getName,Comparator.reverseOrder())),opt->opt.get().getName())));
+
 
 
     }
