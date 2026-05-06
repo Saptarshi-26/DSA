@@ -1,28 +1,52 @@
-# Data Structures and Algorithms in Java
+**# Java Data Structures, Algorithms and Concurrency
 
-This repository contains my practice implementations of Data Structures and Algorithms.
+This repository contains my implementations and practice of:
 
-## Topics Covered
+- Data Structures
+- Algorithms
+- Java Concurrency
+- Problem Solving
+- Custom Collection Implementations
 
+---
+
+# Topics Covered
+
+## Data Structures
 - Arrays
-- Dynamic Programming
+- Linked Lists
 - Binary Trees
-- Backtracking
+- AVL Trees
+- HashMaps
+- Heaps
+
+## Algorithms
+- Dynamic Programming
 - Sliding Window
+- Backtracking
 - Recursion
-- Java Streams
-- Custom Data Structures
 
-## Implementations
+## Java Concurrency
+- CountDownLatch
+- CyclicBarrier
+- Semaphores
+- Executor Framework
 
-Some custom implementations include:
-
+## Custom Implementations
 - Custom ArrayList
 - Custom HashMap
-- AVL Tree
-- Binary Tree Traversals
-- Dynamic Programming problems
 
-## Language
+---
 
-Java
+# Goals
+
+- Strengthen problem-solving skills
+- Understand low-level data structure internals
+- Learn concurrent programming concepts
+- Prepare for backend engineering interviews
+
+---
+
+# Language
+
+- Java**
