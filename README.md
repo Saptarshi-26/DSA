@@ -1,4 +1,4 @@
-**# Java Data Structures, Algorithms and Concurrency
+# Java Data Structures, Algorithms and Concurrency
 
 This repository contains my implementations and practice of:
 
@@ -49,4 +49,4 @@ This repository contains my implementations and practice of:
 
 # Language
 
-- Java**
+- Java
