@@ -160,9 +160,12 @@ public class Main {
 //        Cousin_In_Binary_Tree cousinInBinaryTree = new Cousin_In_Binary_Tree();
 //        System.out.println(cousinInBinaryTree.isCousins(n,11,17));
 
-        Serialize_and_Deserialize_a_Binary_Tree deserializeABinaryTree = new Serialize_and_Deserialize_a_Binary_Tree();
-        String s = deserializeABinaryTree.serialize(n);
-        deserializeABinaryTree.deserialize(s);
+//        Serialize_and_Deserialize_a_Binary_Tree deserializeABinaryTree = new Serialize_and_Deserialize_a_Binary_Tree();
+//        String s = deserializeABinaryTree.serialize(n);
+//        deserializeABinaryTree.deserialize(s);
+
+        Kth_Smallest_in_Bst kthSmallestInBst = new Kth_Smallest_in_Bst();
+        System.out.println(kthSmallestInBst.kthSmallest(n,5));
     }
 
 
