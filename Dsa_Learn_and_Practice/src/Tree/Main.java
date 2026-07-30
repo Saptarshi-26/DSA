@@ -164,8 +164,9 @@ public class Main {
 //        String s = deserializeABinaryTree.serialize(n);
 //        deserializeABinaryTree.deserialize(s);
 
-        Kth_Smallest_in_Bst kthSmallestInBst = new Kth_Smallest_in_Bst();
-        System.out.println(kthSmallestInBst.kthSmallest(n,5));
+//
+//        Burning_Tree_1 burningTree = new Burning_Tree_1();
+//        System.out.println(burningTree.minTime(n,sc.nextInt()));
     }
 
 
