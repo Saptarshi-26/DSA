@@ -8,7 +8,7 @@ public class Boats_to_Save_People {
         int count = 0;
         int i = 0;
         int j = people.length - 1;
-        while (i <= j && count < people.length) {
+        while (i <= j) {
             if (people[i] + people[j] > limit) {
                 j--;
                 count++;
