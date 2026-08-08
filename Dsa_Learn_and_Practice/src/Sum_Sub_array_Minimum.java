@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Sum_Sub_array_Minimum {
     static public int sumSubarrayMins(int[] arr) {
