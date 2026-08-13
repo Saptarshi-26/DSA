@@ -167,6 +167,9 @@ public class Main {
 //
 //        Burning_Tree_1 burningTree = new Burning_Tree_1();
 //        System.out.println(burningTree.minTime(n,sc.nextInt()));
+
+//        Maximum_Width_of_Binary_Tree maximumWidthOfBinaryTree = new Maximum_Width_of_Binary_Tree();
+//        System.out.println(maximumWidthOfBinaryTree.widthOfBinaryTree(n));
     }
 
 
