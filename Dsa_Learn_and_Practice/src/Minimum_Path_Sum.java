@@ -5,11 +5,11 @@ public class Minimum_Path_Sum {
         if (i == grid.length - 1 && j == grid[0].length - 1) {
             return grid[i][j];
         }
-        if (dp[i][j] != 0) return dp[i][j];
+        //if (dp[i][j] != 0) return dp[i][j];
         int sum = Integer.MAX_VALUE;
         if (i + 1 < grid.length) sum = grid[i][j] + min(grid, dp, i + 1, j);
         if (j + 1 < grid[0].length) sum = Math.min(sum, grid[i][j] + min(grid, dp, i, j + 1));
-        dp[i][j] = sum;
+        //dp[i][j] = sum;
         return sum;
     }
 
