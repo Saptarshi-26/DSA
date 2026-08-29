@@ -170,6 +170,9 @@ public class Main {
 
 //        Maximum_Width_of_Binary_Tree maximumWidthOfBinaryTree = new Maximum_Width_of_Binary_Tree();
 //        System.out.println(maximumWidthOfBinaryTree.widthOfBinaryTree(n));
+
+        House_Robber_III houseRobberIii = new House_Robber_III();
+        System.out.println(houseRobberIii.rob(n));
     }
 
 
