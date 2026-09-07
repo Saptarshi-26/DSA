@@ -24,18 +24,18 @@ public class Clone_Graph {
         }
     }
 
-    public Node clone(Node n, HashMap<Node, Node> reminder) {
-        if (reminder.containsKey(n)) {
-            return reminder.get(n);
+    public Node clone(Node n, HashMap<Node, Node> nodeHashMap) {
+        if (nodeHashMap.containsKey(n)) {
+            return nodeHashMap.get(n);
         }
 
         if (n != null) {
             Node newNode = new Node();
             newNode.val = n.val;
-            reminder.put(n, newNode);
+            nodeHashMap.put(n, newNode);
             List<Node> list = new ArrayList<>();
             for (Node node : n.neighbors) {
-                Node n1 = clone(node, reminder);
+                Node n1 = clone(node, nodeHashMap);
                 list.add(n1);
             }
             newNode.neighbors = list;
