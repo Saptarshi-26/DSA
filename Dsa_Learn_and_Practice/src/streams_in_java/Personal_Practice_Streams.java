@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Peronal_Practice_Streams {
+public class Personal_Practice_Streams {
     static class Employee {
         String name;
         String department;
